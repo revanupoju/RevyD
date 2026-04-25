@@ -444,6 +444,7 @@ final class TerminalView: NSView {
             hidePromptCarousel()
         }
 
+        playSound(.send)
         let bubble = createBubble(text: text, style: .user)
         transcriptStack.addArrangedSubview(bubble)
 
@@ -599,8 +600,10 @@ final class TerminalView: NSView {
 
         // Re-render the final streamed text with markdown formatting
         if let label = currentStreamingLabel, !streamedText.isEmpty {
-            label.attributedStringValue = MarkdownRenderer.render(streamedText, fontSize: 13, textColor: .labelColor)
+            let trimmed = streamedText.trimmingCharacters(in: .whitespacesAndNewlines)
+            label.attributedStringValue = MarkdownRenderer.render(trimmed, fontSize: 13, textColor: .labelColor)
             label.sizeToFit()
+            playSound(.receive)
             scrollToBottom()
         }
 
@@ -727,6 +730,22 @@ final class TerminalView: NSView {
         ])
 
         return bubble
+    }
+
+    // MARK: - Sounds
+
+    enum ChatSound {
+        case send     // user sends message
+        case receive  // assistant response complete
+    }
+
+    private func playSound(_ sound: ChatSound) {
+        let soundName: String
+        switch sound {
+        case .send:    soundName = "Tink"
+        case .receive: soundName = "Pop"
+        }
+        NSSound(named: NSSound.Name(soundName))?.play()
     }
 
     private func scrollToBottom() {
