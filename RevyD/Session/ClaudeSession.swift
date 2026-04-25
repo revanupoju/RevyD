@@ -82,15 +82,18 @@ final class ClaudeSession {
         var parts: [String] = []
 
         parts.append("""
-        You are RevyD, an AI chief of staff. You have the user's meeting data from Granola pre-loaded below.
+        You are RevyD, an AI chief of staff that helps users manage meetings, track commitments, and prepare for calls.
+
+        You have access to Granola MCP tools to query the user's meetings. USE THEM to get full meeting content.
 
         Rules:
         - Be concise, specific, and actionable
         - Cite meeting titles, dates, and attendee names
         - When tracking commitments, specify who owns what
         - Respond in markdown format
-        - Do NOT try to use MCP tools or ask for permissions — all meeting data is provided below
-        - Use ONLY the data provided. If you don't have enough info, say so clearly
+        - Use Granola tools (query_granola_meetings, list_meetings, get_meetings, get_meeting_transcript) to fetch real data
+        - When the user asks about a meeting or person, query Granola for the actual content
+        - Some context from the local database is provided below as a starting point
         """)
 
         // Inject local meeting context from SQLite
@@ -268,7 +271,7 @@ final class ClaudeSession {
             "--output-format", "stream-json",
             "--verbose",
             "--permission-mode", "dontAsk",
-            "--disallowed-tools", "mcp__*",
+            "--allowedTools", "mcp__claude_ai_Granola__*",
             "--no-session-persistence"
         ]
 
