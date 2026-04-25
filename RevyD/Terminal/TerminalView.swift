@@ -503,8 +503,9 @@ final class TerminalView: NSView {
     }
 
     func appendStreamingText(_ delta: String) {
-        // Remove shimmer on first text
+        // Remove shimmer and live status on first text
         if streamedText.isEmpty {
+            clearLiveStatus()
             replaceShimmerWithBubble()
         }
         streamedText += delta
@@ -576,6 +577,7 @@ final class TerminalView: NSView {
     func updateStreamingText(_ fullText: String) {
         // If shimmer is still showing, replace it first
         if shimmerView != nil {
+            clearLiveStatus()
             replaceShimmerWithBubble()
         }
         streamedText = fullText
