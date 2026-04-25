@@ -288,6 +288,7 @@ final class ClaudeSession {
 
                 // Parse Claude Code stream-json events
                 let type = json["type"] as? String ?? ""
+                SessionDebugLogger.log("stream", "type=\(type)")
 
                 // 1. Assistant message with content blocks (streaming text)
                 if type == "assistant",
@@ -325,20 +326,21 @@ final class ClaudeSession {
             }
 
             self.isBusy = false
+            SessionDebugLogger.log("stream", "Process finished. status=\(status) stdout=\(stdout.count)chars stderr=\(stderr.count)chars streamedText=\(streamedText.count)chars")
 
-            // Extract final result
+            // Extract final result from the result event
             let resultText = self.extractResult(from: stdout) ?? streamedText
 
             if status == 0, !resultText.isEmpty {
                 self.history.append(Message(role: .assistant, text: resultText))
-                if resultText != streamedText {
-                    self.onText?(resultText)
-                }
+                // Always fire onText with the final result to ensure UI shows it
+                self.onText?(resultText)
                 self.onTurnComplete?()
             } else {
-                let errorMsg = stderr.isEmpty ? "Claude Code could not complete the request." : stderr
-                self.history.append(Message(role: .error, text: errorMsg))
-                self.onError?(errorMsg)
+                let errorMsg = stderr.trimmingCharacters(in: .whitespacesAndNewlines)
+                let displayError = errorMsg.isEmpty ? "Claude Code could not complete the request." : String(errorMsg.prefix(500))
+                self.history.append(Message(role: .error, text: displayError))
+                self.onError?(displayError)
                 self.onTurnComplete?()
             }
         }

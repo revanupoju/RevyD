@@ -574,6 +574,10 @@ final class TerminalView: NSView {
     }
 
     func updateStreamingText(_ fullText: String) {
+        // If shimmer is still showing, replace it first
+        if shimmerView != nil {
+            replaceShimmerWithBubble()
+        }
         streamedText = fullText
         currentStreamingLabel?.stringValue = fullText
         currentStreamingLabel?.sizeToFit()
