@@ -286,42 +286,32 @@ final class ClaudeSession {
                     return
                 }
 
-                // Parse stream-json events
-                if let type = json["type"] as? String {
-                    if type == "assistant" || type == "text",
-                       let content = json["content_block_delta"] as? [String: Any],
-                       let delta = content["delta"] as? [String: Any],
-                       let text = delta["text"] as? String {
-                        streamedText += text
-                        self.onTextDelta?(text)
-                    }
+                // Parse Claude Code stream-json events
+                let type = json["type"] as? String ?? ""
 
-                    // Handle content_block with text
-                    if let contentBlocks = json["content"] as? [[String: Any]] {
-                        for block in contentBlocks {
-                            if let text = block["text"] as? String, !text.isEmpty {
-                                if text != streamedText {
-                                    streamedText = text
-                                    self.onText?(text)
-                                }
-                            }
-                        }
-                    }
-
-                    // Simpler: look for assistant text in message field
-                    if type == "assistant", let message = json["message"] as? [String: Any],
-                       let content = message["content"] as? [[String: Any]] {
-                        for block in content {
-                            if let text = block["text"] as? String, !text.isEmpty, text != streamedText {
+                // 1. Assistant message with content blocks (streaming text)
+                if type == "assistant",
+                   let message = json["message"] as? [String: Any],
+                   let content = message["content"] as? [[String: Any]] {
+                    for block in content {
+                        let blockType = block["type"] as? String ?? ""
+                        if blockType == "text", let text = block["text"] as? String, !text.isEmpty {
+                            if text != streamedText {
+                                // Calculate delta
+                                let delta = text.hasPrefix(streamedText)
+                                    ? String(text.dropFirst(streamedText.count))
+                                    : text
                                 streamedText = text
-                                self.onText?(text)
+                                if !delta.isEmpty {
+                                    self.onTextDelta?(delta)
+                                }
                             }
                         }
                     }
                 }
 
-                // Claude Code stream-json: look for result text
-                if let result = json["result"] as? String, !result.isEmpty {
+                // 2. Final result
+                if type == "result", let result = json["result"] as? String, !result.isEmpty {
                     streamedText = result
                     self.onText?(result)
                 }
