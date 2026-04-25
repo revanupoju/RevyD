@@ -40,6 +40,20 @@ enum AppSettings {
         set { UserDefaults.standard.set(newValue, forKey: granolaLastSyncKey) }
     }
 
+    static let deepgramAPIKeyKey = "deepgramAPIKey"
+
+    static var deepgramAPIKey: String? {
+        get {
+            let val = UserDefaults.standard.string(forKey: deepgramAPIKeyKey)?.trimmingCharacters(in: .whitespacesAndNewlines)
+            return (val?.isEmpty ?? true) ? nil : val
+        }
+        set { UserDefaults.standard.set(newValue, forKey: deepgramAPIKeyKey) }
+    }
+
+    static var isRecordingAvailable: Bool {
+        deepgramAPIKey != nil
+    }
+
     // MARK: - Claude Code Detection
 
     static func claudeCodePath() -> String? {

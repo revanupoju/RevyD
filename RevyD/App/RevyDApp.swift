@@ -7,8 +7,7 @@ struct RevyDApp: App {
 
     var body: some Scene {
         Settings {
-            Text("RevyD Settings")
-                .frame(width: 400, height: 300)
+            SettingsView()
         }
     }
 }
@@ -99,6 +98,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @objc func openSettings() {
         NSApp.activate(ignoringOtherApps: true)
         if settingsWindow == nil {
+            let hostingController = NSHostingController(rootView: SettingsView())
             let window = NSWindow(
                 contentRect: NSRect(x: 0, y: 0, width: 500, height: 400),
                 styleMask: [.titled, .closable, .miniaturizable],
@@ -106,6 +106,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 defer: false
             )
             window.title = "RevyD Settings"
+            window.contentViewController = hostingController
             window.level = NSWindow.Level(rawValue: NSWindow.Level.statusBar.rawValue + 11)
             window.collectionBehavior = [.canJoinAllSpaces]
             window.center()

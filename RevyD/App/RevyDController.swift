@@ -29,14 +29,21 @@ class RevyDController {
         startDisplayLink()
 
         // Start proactive checks (overdue commitments, upcoming meetings)
+        // Request notification permission
+        NotificationManager.shared.requestPermission()
+
         proactiveScheduler.onOverdueCommitments = { [weak self] overdue in
             guard let char = self?.characters.first else { return }
             char.showBubble(text: "\(overdue.count) overdue", isCompletion: false)
+            char.setExpression(.alert)
+            NotificationManager.shared.notifyOverdue(overdue)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5) { char.setExpression(.idle) }
         }
         proactiveScheduler.onPrepReady = { [weak self] title, _ in
             guard let char = self?.characters.first else { return }
             let shortTitle = String(title.prefix(20))
             char.showBubble(text: "\(shortTitle) soon", isCompletion: false)
+            NotificationManager.shared.notifyUpcomingMeeting(title: title, inMinutes: 10, attendees: [])
         }
         proactiveScheduler.start()
 

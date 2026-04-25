@@ -208,10 +208,53 @@ extension RevyCharacter {
             return
         }
 
-        // Handle weekly summary locally
-        if lower.contains("weekly summary") || lower.contains("week's summary") {
+        // Handle weekly summary/digest locally
+        if lower.contains("weekly summary") || lower.contains("week's summary") || lower.contains("weekly digest") {
             let summary = controller?.proactiveScheduler.generateWeeklySummary() ?? "No data available."
             terminalView?.appendSystemBubble(summary)
+            return
+        }
+
+        // Handle export
+        if lower.contains("export") {
+            if lower.contains("weekly") || lower.contains("digest") {
+                let digest = ExportEngine.exportWeeklyDigest()
+                let panel = NSSavePanel()
+                panel.nameFieldStringValue = "RevyD Weekly Digest.md"
+                panel.level = NSWindow.Level(rawValue: NSWindow.Level.statusBar.rawValue + 20)
+                NSApp.activate(ignoringOtherApps: true)
+                if panel.runModal() == .OK, let url = panel.url {
+                    try? digest.write(to: url, atomically: true, encoding: .utf8)
+                    terminalView?.appendSystemBubble("Weekly digest exported!")
+                }
+                return
+            }
+
+            // Export latest debrief
+            let meetings = MeetingStore().getAll(limit: 10)
+            if let meeting = meetings.first(where: { $0.debriefJson != nil }) {
+                ExportEngine.exportAndSave(meeting: meeting)
+                terminalView?.appendSystemBubble("Debrief exported for **\(meeting.title)**")
+            } else {
+                terminalView?.appendSystemBubble("No debriefs to export yet. Run a debrief first.")
+            }
+            return
+        }
+
+        // Handle recording
+        if lower.contains("start recording") || lower.contains("record meeting") {
+            if !AppSettings.isRecordingAvailable {
+                terminalView?.appendSystemBubble("Recording requires a Deepgram API key. Add it in Settings (Cmd+,) under the Recording tab.")
+                return
+            }
+            terminalView?.appendSystemBubble("Recording started. Say \"stop recording\" when done.")
+            // TODO: Wire recorder start
+            return
+        }
+
+        if lower.contains("stop recording") {
+            terminalView?.appendSystemBubble("Recording stopped. Transcribing...")
+            // TODO: Wire recorder stop
             return
         }
 
