@@ -32,6 +32,20 @@ class RevyDController {
         // Request notification permission
         NotificationManager.shared.requestPermission()
 
+        // Monitor network for offline mode
+        _ = NetworkMonitor.shared
+        NetworkMonitor.shared.onStatusChanged = { [weak self] connected in
+            guard let char = self?.characters.first else { return }
+            if !connected {
+                char.showBubble(text: "offline", isCompletion: false)
+                char.setExpression(.alert)
+            } else {
+                char.showBubble(text: "online", isCompletion: true)
+                char.setExpression(.happy)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3) { char.setExpression(.idle) }
+            }
+        }
+
         proactiveScheduler.onOverdueCommitments = { [weak self] overdue in
             guard let char = self?.characters.first else { return }
             char.showBubble(text: "\(overdue.count) overdue", isCompletion: false)

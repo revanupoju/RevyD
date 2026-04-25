@@ -35,19 +35,84 @@ final class ClaudeSession {
         guard !isRunning else { return }
         isRunning = true
 
-        if let path = AppSettings.claudeCodePath() {
-            selectedBackend = path
-            SessionDebugLogger.log("session", "Claude Code found at \(path)")
-            onSessionReady?()
-        } else {
+        guard let path = AppSettings.claudeCodePath() else {
             isRunning = false
             onSetupRequired?("Claude Code not found. Install it from claude.ai/download to use RevyD.")
+            return
+        }
+
+        selectedBackend = path
+        SessionDebugLogger.log("session", "Claude Code found at \(path)")
+
+        // Health check: verify Claude Code is logged in
+        healthCheck(claudePath: path) { [weak self] result in
+            guard let self else { return }
+            switch result {
+            case .ready:
+                self.onSessionReady?()
+            case .notLoggedIn:
+                self.isRunning = false
+                self.onSetupRequired?("Claude Code is not logged in. Run `claude` in your terminal to log in, then restart RevyD.")
+            case .error(let msg):
+                // Still allow usage — might work anyway
+                SessionDebugLogger.log("session", "Health check warning: \(msg)")
+                self.onSessionReady?()
+            }
+        }
+    }
+
+    // MARK: - Health Check
+
+    private enum HealthStatus {
+        case ready
+        case notLoggedIn
+        case error(String)
+    }
+
+    private func healthCheck(claudePath: String, completion: @escaping (HealthStatus) -> Void) {
+        let process = Process()
+        process.executableURL = URL(fileURLWithPath: claudePath)
+        process.arguments = ["-p", "Say OK", "--output-format", "text", "--max-budget-usd", "0.01", "--no-session-persistence"]
+        process.environment = resolveShellEnvironment()
+
+        let stdout = Pipe()
+        let stderr = Pipe()
+        process.standardOutput = stdout
+        process.standardError = stderr
+
+        process.terminationHandler = { proc in
+            let outData = stdout.fileHandleForReading.readDataToEndOfFile()
+            let errData = stderr.fileHandleForReading.readDataToEndOfFile()
+            let out = String(data: outData, encoding: .utf8) ?? ""
+            let err = String(data: errData, encoding: .utf8) ?? ""
+            let combined = (out + err).lowercased()
+
+            DispatchQueue.main.async {
+                if combined.contains("not logged in") || combined.contains("/login") || combined.contains("please run") {
+                    completion(.notLoggedIn)
+                } else if proc.terminationStatus == 0 {
+                    completion(.ready)
+                } else {
+                    completion(.error(String((out + err).prefix(200))))
+                }
+            }
+        }
+
+        do {
+            try process.run()
+        } catch {
+            completion(.error(error.localizedDescription))
         }
     }
 
     func send(message: String) {
         guard let claudePath = selectedBackend else {
             onSetupRequired?("Claude Code not found.")
+            return
+        }
+
+        guard NetworkMonitor.shared.isConnected else {
+            onError?("You're offline. Connect to the internet to chat with Claude.")
             return
         }
 
@@ -93,6 +158,8 @@ final class ClaudeSession {
         - Respond in markdown format
         - Use Granola tools (query_granola_meetings, list_meetings, get_meetings, get_meeting_transcript) to fetch real data
         - When the user asks about a meeting or person, query Granola for the actual content
+        - If Granola tools fail or are unavailable, use the local database context provided below as fallback
+        - NEVER ask for permissions or say tools are unavailable — either use them or use the fallback data
         - Some context from the local database is provided below as a starting point
         """)
 

@@ -258,7 +258,22 @@ extension RevyCharacter {
             return
         }
 
-        // Send to Claude for everything else
+        // Check network — if offline, use local data only
+        if !NetworkMonitor.shared.isConnected {
+            let searchResults = KnowledgeIndex().search(query: message, limit: 5)
+            if searchResults.isEmpty {
+                terminalView?.appendSystemBubble("You're offline. I can only search local data, and no results were found for your query.\n\nConnect to the internet to use Claude for richer answers.")
+            } else {
+                var response = "**Offline mode** — showing local results:\n\n"
+                for r in searchResults {
+                    response += "  -  **\(r.title)** (\(r.entityType))\n     \(r.snippet)\n\n"
+                }
+                terminalView?.appendSystemBubble(response)
+            }
+            return
+        }
+
+        // Send to Claude
         terminalView?.beginStreaming()
         session.send(message: message)
     }

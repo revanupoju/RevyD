@@ -14,6 +14,7 @@
 		3417129ED3092A3DE6191956 /* KnowledgeFusionEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3840DF6F30E9D1C2A0805F0 /* KnowledgeFusionEngine.swift */; };
 		39081EBA153276FD1D5D819D /* GranolaClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4909C0CD7FD1CE5D0FE1766B /* GranolaClient.swift */; };
 		3C412793B8CBF963C6B54219 /* RevyCharacterPopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9CAEE81D2EAADC882D3EEE /* RevyCharacterPopover.swift */; };
+		404820FF70F8C75B1B8FE65C /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02722BB90CAD886DC0A6280D /* NetworkMonitor.swift */; };
 		42BD9C33F7F7B49A5D9D708F /* ClaudeSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF3C51EE33D525BF3154737 /* ClaudeSession.swift */; };
 		5055A32BEE73703E508A5EEC /* PersonStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7117EB099F1B4F5AD5A5EF2A /* PersonStore.swift */; };
 		521DCF849BC937942F70059B /* MarkdownExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E11AA96FE5DD2A3C09E60E6 /* MarkdownExtractor.swift */; };
@@ -57,6 +58,7 @@
 		00F8645D832270CBE7D9520C /* ExportEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportEngine.swift; sourceTree = "<group>"; };
 		014C8C8E581737064C9CDC64 /* RevyCharacterSessionWiring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevyCharacterSessionWiring.swift; sourceTree = "<group>"; };
 		01C577CFAA6478276A44BFEE /* CalendarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarManager.swift; sourceTree = "<group>"; };
+		02722BB90CAD886DC0A6280D /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		049BD457DADB626F1D507816 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0DCC9188BCD6E4AF25BB7A0F /* KeyableWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyableWindow.swift; sourceTree = "<group>"; };
 		0EF229D3143ACE4DB77B41E4 /* MeetingStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingStore.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 			children = (
 				C84E2CFCA2926A62AF00DC30 /* CharacterContentView.swift */,
 				0DCC9188BCD6E4AF25BB7A0F /* KeyableWindow.swift */,
+				02722BB90CAD886DC0A6280D /* NetworkMonitor.swift */,
 				2D444827FD91F887B4AF2B75 /* PopoverTheme.swift */,
 			);
 			path = Support;
@@ -342,6 +345,7 @@
 				9AE976D945318F031C91614E /* MarkdownRenderer.swift in Sources */,
 				9637F91149AB285B3D9A0F64 /* MeetingRecorder.swift in Sources */,
 				F9D6DD7CE57F8FFDE5E587AE /* MeetingStore.swift in Sources */,
+				404820FF70F8C75B1B8FE65C /* NetworkMonitor.swift in Sources */,
 				F7CD2785593640D5A50AB4B2 /* NotificationManager.swift in Sources */,
 				F80305512B209D44B182362E /* PDFExtractor.swift in Sources */,
 				ADAA2082E9AA6D5ADE432FF3 /* PeopleProfileEngine.swift in Sources */,
