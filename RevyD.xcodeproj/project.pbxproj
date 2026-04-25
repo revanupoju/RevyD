@@ -1,0 +1,548 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		07565F372A74B1EC5E416B5E /* Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE8C9B0E91FA38219C73E13 /* Schema.swift */; };
+		0AD29C8CEBA4DCD70873BC14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF844937AC765394A7192588 /* Assets.xcassets */; };
+		0CB77C658D6CAA7C6DD558F8 /* RevyDController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56D0DF6B80B84D42E445B9D /* RevyDController.swift */; };
+		2DCC7F1923DC817840A72B83 /* KeyableWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCC9188BCD6E4AF25BB7A0F /* KeyableWindow.swift */; };
+		3417129ED3092A3DE6191956 /* KnowledgeFusionEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3840DF6F30E9D1C2A0805F0 /* KnowledgeFusionEngine.swift */; };
+		39081EBA153276FD1D5D819D /* GranolaClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4909C0CD7FD1CE5D0FE1766B /* GranolaClient.swift */; };
+		3C412793B8CBF963C6B54219 /* RevyCharacterPopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9CAEE81D2EAADC882D3EEE /* RevyCharacterPopover.swift */; };
+		42BD9C33F7F7B49A5D9D708F /* ClaudeSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF3C51EE33D525BF3154737 /* ClaudeSession.swift */; };
+		5055A32BEE73703E508A5EEC /* PersonStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7117EB099F1B4F5AD5A5EF2A /* PersonStore.swift */; };
+		521DCF849BC937942F70059B /* MarkdownExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E11AA96FE5DD2A3C09E60E6 /* MarkdownExtractor.swift */; };
+		5252CCB07DCB8D107F936D8B /* RevyCharacterTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBD022BDD47DA9D3E494F07 /* RevyCharacterTypes.swift */; };
+		589F197CEDC1260A38FCC642 /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C577CFAA6478276A44BFEE /* CalendarManager.swift */; };
+		5F109D9953F872DC291AD428 /* TerminalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184A46AEA8F79731ABC3A8CC /* TerminalView.swift */; };
+		6B19217832530D9C587F1B06 /* SessionDebugLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A7F4AE23A83B2E4DDDE849 /* SessionDebugLogger.swift */; };
+		772F04A88F95B92D5CC22AF5 /* RevyDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAAD44108B3F18367E59099 /* RevyDatabase.swift */; };
+		873560FEB757FC6AC0DB4B54 /* RevyDApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1799A0C691DBD8BEEC16D67 /* RevyDApp.swift */; };
+		8A3905CC2B6345E058E7CD9E /* CommitmentTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7382DF4A481AD1AE79423E11 /* CommitmentTracker.swift */; };
+		8B732F56A800344F1D71A21C /* ClaudeSessionPrompts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E788F417A6B7B41C576EB3 /* ClaudeSessionPrompts.swift */; };
+		92E0A175084BAC174E1E3F85 /* DebriefEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE5736C2A09996477CA863A /* DebriefEngine.swift */; };
+		9AE976D945318F031C91614E /* MarkdownRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41A6D7C0218C1A204AC5D01 /* MarkdownRenderer.swift */; };
+		9B182EE2130AC9C0CEFFBBD4 /* RevyCharacterBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD587E3C91F893F488D200C /* RevyCharacterBubble.swift */; };
+		9E7CC1C7EC6535D9A1CFD1A5 /* CharacterContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84E2CFCA2926A62AF00DC30 /* CharacterContentView.swift */; };
+		AC21B728689286F144909B7A /* PrepEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE76DD72C75CAC7107753085 /* PrepEngine.swift */; };
+		ADAA2082E9AA6D5ADE432FF3 /* PeopleProfileEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB22B91F9B3DC475D4C93D3C /* PeopleProfileEngine.swift */; };
+		B181612401E631F59428B95E /* CommitmentStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57554C94AAE16AFC8117AEC5 /* CommitmentStore.swift */; };
+		C65DC4182DDF734D98988B85 /* DocumentStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44031EE0A8F8379AF417EB5A /* DocumentStore.swift */; };
+		D5AFA48A6E6DC267DBB23BAF /* RevyCharacterCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EE285197D5EA3B9704C07F /* RevyCharacterCore.swift */; };
+		D6D13160F218E7408F8262DA /* CharacterSprites in Resources */ = {isa = PBXBuildFile; fileRef = C3A726311AD578481DB6A24E /* CharacterSprites */; };
+		DA2BC4B92B001F494933C24B /* ProactiveScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3CD554299871B3EF7820AF /* ProactiveScheduler.swift */; };
+		DD5EAA4BD4FBC26C38400F35 /* DocumentIndexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425282E1E27683CEEB2E73B5 /* DocumentIndexer.swift */; };
+		E0988FED238CEC26FF1C509A /* RevyCharacterMovement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6AA67FC1D0AB746EB5DF18 /* RevyCharacterMovement.swift */; };
+		E5B9CBEF76131F75B1E9AB1F /* GranolaSyncEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03C7CC9C51469D349AB07EF /* GranolaSyncEngine.swift */; };
+		EFA905DD4CB17C23F2CDC0C1 /* KnowledgeIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8F8F557C7B04A943D0F42C /* KnowledgeIndex.swift */; };
+		F175C5386C3D0B9007476E37 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5ACF3DDE8DFFB65B183D25 /* AppSettings.swift */; };
+		F80305512B209D44B182362E /* PDFExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F22A837636BF118C21405AE /* PDFExtractor.swift */; };
+		F9D6DD7CE57F8FFDE5E587AE /* MeetingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF229D3143ACE4DB77B41E4 /* MeetingStore.swift */; };
+		FB0BB8130C7D3D24C7C0001E /* RevyCharacterSessionWiring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014C8C8E581737064C9CDC64 /* RevyCharacterSessionWiring.swift */; };
+		FB82B363C34AB7F83B652B10 /* GranolaModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC35911D456E6F602D953ECE /* GranolaModels.swift */; };
+		FB8BEBB0F01BBAD6F98285F0 /* PopoverTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D444827FD91F887B4AF2B75 /* PopoverTheme.swift */; };
+		FCD2DBF837D486F0AB36AE0E /* RevyCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA12EFBD4AB25BBA99D8E67 /* RevyCharacter.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		014C8C8E581737064C9CDC64 /* RevyCharacterSessionWiring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevyCharacterSessionWiring.swift; sourceTree = "<group>"; };
+		01C577CFAA6478276A44BFEE /* CalendarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarManager.swift; sourceTree = "<group>"; };
+		049BD457DADB626F1D507816 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		0DCC9188BCD6E4AF25BB7A0F /* KeyableWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyableWindow.swift; sourceTree = "<group>"; };
+		0EF229D3143ACE4DB77B41E4 /* MeetingStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingStore.swift; sourceTree = "<group>"; };
+		10A58B7DC4F42BB2BD4F491F /* RevyD.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RevyD.entitlements; sourceTree = "<group>"; };
+		1266D3DDA7AD6B1A004AE111 /* RevyD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RevyD.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		184A46AEA8F79731ABC3A8CC /* TerminalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalView.swift; sourceTree = "<group>"; };
+		1F22A837636BF118C21405AE /* PDFExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFExtractor.swift; sourceTree = "<group>"; };
+		2AE8C9B0E91FA38219C73E13 /* Schema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schema.swift; sourceTree = "<group>"; };
+		2BD587E3C91F893F488D200C /* RevyCharacterBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevyCharacterBubble.swift; sourceTree = "<group>"; };
+		2D444827FD91F887B4AF2B75 /* PopoverTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverTheme.swift; sourceTree = "<group>"; };
+		34A7F4AE23A83B2E4DDDE849 /* SessionDebugLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDebugLogger.swift; sourceTree = "<group>"; };
+		3D8F8F557C7B04A943D0F42C /* KnowledgeIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowledgeIndex.swift; sourceTree = "<group>"; };
+		41E788F417A6B7B41C576EB3 /* ClaudeSessionPrompts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaudeSessionPrompts.swift; sourceTree = "<group>"; };
+		425282E1E27683CEEB2E73B5 /* DocumentIndexer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentIndexer.swift; sourceTree = "<group>"; };
+		44031EE0A8F8379AF417EB5A /* DocumentStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentStore.swift; sourceTree = "<group>"; };
+		48EE285197D5EA3B9704C07F /* RevyCharacterCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevyCharacterCore.swift; sourceTree = "<group>"; };
+		4909C0CD7FD1CE5D0FE1766B /* GranolaClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GranolaClient.swift; sourceTree = "<group>"; };
+		4BF3C51EE33D525BF3154737 /* ClaudeSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaudeSession.swift; sourceTree = "<group>"; };
+		57554C94AAE16AFC8117AEC5 /* CommitmentStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitmentStore.swift; sourceTree = "<group>"; };
+		7117EB099F1B4F5AD5A5EF2A /* PersonStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonStore.swift; sourceTree = "<group>"; };
+		7382DF4A481AD1AE79423E11 /* CommitmentTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitmentTracker.swift; sourceTree = "<group>"; };
+		7E11AA96FE5DD2A3C09E60E6 /* MarkdownExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownExtractor.swift; sourceTree = "<group>"; };
+		9A6AA67FC1D0AB746EB5DF18 /* RevyCharacterMovement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevyCharacterMovement.swift; sourceTree = "<group>"; };
+		9AA12EFBD4AB25BBA99D8E67 /* RevyCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevyCharacter.swift; sourceTree = "<group>"; };
+		AB22B91F9B3DC475D4C93D3C /* PeopleProfileEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleProfileEngine.swift; sourceTree = "<group>"; };
+		AC35911D456E6F602D953ECE /* GranolaModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GranolaModels.swift; sourceTree = "<group>"; };
+		BE76DD72C75CAC7107753085 /* PrepEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepEngine.swift; sourceTree = "<group>"; };
+		BF3CD554299871B3EF7820AF /* ProactiveScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProactiveScheduler.swift; sourceTree = "<group>"; };
+		C3A726311AD578481DB6A24E /* CharacterSprites */ = {isa = PBXFileReference; lastKnownFileType = folder; name = CharacterSprites; path = RevyD/CharacterSprites; sourceTree = SOURCE_ROOT; };
+		C56D0DF6B80B84D42E445B9D /* RevyDController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevyDController.swift; sourceTree = "<group>"; };
+		C84E2CFCA2926A62AF00DC30 /* CharacterContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterContentView.swift; sourceTree = "<group>"; };
+		CDE5736C2A09996477CA863A /* DebriefEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebriefEngine.swift; sourceTree = "<group>"; };
+		CF5ACF3DDE8DFFB65B183D25 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		D1799A0C691DBD8BEEC16D67 /* RevyDApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevyDApp.swift; sourceTree = "<group>"; };
+		DDBD022BDD47DA9D3E494F07 /* RevyCharacterTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevyCharacterTypes.swift; sourceTree = "<group>"; };
+		E3840DF6F30E9D1C2A0805F0 /* KnowledgeFusionEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowledgeFusionEngine.swift; sourceTree = "<group>"; };
+		EAAAD44108B3F18367E59099 /* RevyDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevyDatabase.swift; sourceTree = "<group>"; };
+		ED9CAEE81D2EAADC882D3EEE /* RevyCharacterPopover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevyCharacterPopover.swift; sourceTree = "<group>"; };
+		F03C7CC9C51469D349AB07EF /* GranolaSyncEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GranolaSyncEngine.swift; sourceTree = "<group>"; };
+		F41A6D7C0218C1A204AC5D01 /* MarkdownRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownRenderer.swift; sourceTree = "<group>"; };
+		FF844937AC765394A7192588 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		07A95A91D0FA72F3C9029133 /* Intelligence */ = {
+			isa = PBXGroup;
+			children = (
+				7382DF4A481AD1AE79423E11 /* CommitmentTracker.swift */,
+				CDE5736C2A09996477CA863A /* DebriefEngine.swift */,
+				AB22B91F9B3DC475D4C93D3C /* PeopleProfileEngine.swift */,
+				BE76DD72C75CAC7107753085 /* PrepEngine.swift */,
+				BF3CD554299871B3EF7820AF /* ProactiveScheduler.swift */,
+			);
+			path = Intelligence;
+			sourceTree = "<group>";
+		};
+		134BDCF02DFCABF8DB03889E /* Character */ = {
+			isa = PBXGroup;
+			children = (
+				9AA12EFBD4AB25BBA99D8E67 /* RevyCharacter.swift */,
+				2BD587E3C91F893F488D200C /* RevyCharacterBubble.swift */,
+				48EE285197D5EA3B9704C07F /* RevyCharacterCore.swift */,
+				9A6AA67FC1D0AB746EB5DF18 /* RevyCharacterMovement.swift */,
+				ED9CAEE81D2EAADC882D3EEE /* RevyCharacterPopover.swift */,
+				014C8C8E581737064C9CDC64 /* RevyCharacterSessionWiring.swift */,
+				DDBD022BDD47DA9D3E494F07 /* RevyCharacterTypes.swift */,
+			);
+			path = Character;
+			sourceTree = "<group>";
+		};
+		246964FBF53F441617787202 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				CF5ACF3DDE8DFFB65B183D25 /* AppSettings.swift */,
+				D1799A0C691DBD8BEEC16D67 /* RevyDApp.swift */,
+				C56D0DF6B80B84D42E445B9D /* RevyDController.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		28A19484689BCA20BD2CFF49 /* Knowledge */ = {
+			isa = PBXGroup;
+			children = (
+				425282E1E27683CEEB2E73B5 /* DocumentIndexer.swift */,
+				E3840DF6F30E9D1C2A0805F0 /* KnowledgeFusionEngine.swift */,
+				7E11AA96FE5DD2A3C09E60E6 /* MarkdownExtractor.swift */,
+				1F22A837636BF118C21405AE /* PDFExtractor.swift */,
+			);
+			path = Knowledge;
+			sourceTree = "<group>";
+		};
+		737E5516EF6069A8DC9829E7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1266D3DDA7AD6B1A004AE111 /* RevyD.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8A4D0F5C63913DF46D180747 = {
+			isa = PBXGroup;
+			children = (
+				C3A726311AD578481DB6A24E /* CharacterSprites */,
+				B95E27C386C487C16CDB9C49 /* RevyD */,
+				737E5516EF6069A8DC9829E7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8FFC7CB940D717480111B373 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				C84E2CFCA2926A62AF00DC30 /* CharacterContentView.swift */,
+				0DCC9188BCD6E4AF25BB7A0F /* KeyableWindow.swift */,
+				2D444827FD91F887B4AF2B75 /* PopoverTheme.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		95517EE6D549EF6BA01BFB30 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				57554C94AAE16AFC8117AEC5 /* CommitmentStore.swift */,
+				44031EE0A8F8379AF417EB5A /* DocumentStore.swift */,
+				3D8F8F557C7B04A943D0F42C /* KnowledgeIndex.swift */,
+				0EF229D3143ACE4DB77B41E4 /* MeetingStore.swift */,
+				7117EB099F1B4F5AD5A5EF2A /* PersonStore.swift */,
+				EAAAD44108B3F18367E59099 /* RevyDatabase.swift */,
+				2AE8C9B0E91FA38219C73E13 /* Schema.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		A7102E836D76AA5B1CA4EB5A /* Terminal */ = {
+			isa = PBXGroup;
+			children = (
+				F41A6D7C0218C1A204AC5D01 /* MarkdownRenderer.swift */,
+				184A46AEA8F79731ABC3A8CC /* TerminalView.swift */,
+			);
+			path = Terminal;
+			sourceTree = "<group>";
+		};
+		B95E27C386C487C16CDB9C49 /* RevyD */ = {
+			isa = PBXGroup;
+			children = (
+				FF844937AC765394A7192588 /* Assets.xcassets */,
+				049BD457DADB626F1D507816 /* Info.plist */,
+				10A58B7DC4F42BB2BD4F491F /* RevyD.entitlements */,
+				246964FBF53F441617787202 /* App */,
+				DAFDFEB89271016D2132BA80 /* Calendar */,
+				134BDCF02DFCABF8DB03889E /* Character */,
+				95517EE6D549EF6BA01BFB30 /* Data */,
+				E12CEAB5AAAC2020BB9A3D56 /* Granola */,
+				07A95A91D0FA72F3C9029133 /* Intelligence */,
+				28A19484689BCA20BD2CFF49 /* Knowledge */,
+				C895616CD2D21E2253A36F61 /* Session */,
+				8FFC7CB940D717480111B373 /* Support */,
+				A7102E836D76AA5B1CA4EB5A /* Terminal */,
+			);
+			path = RevyD;
+			sourceTree = "<group>";
+		};
+		C895616CD2D21E2253A36F61 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				4BF3C51EE33D525BF3154737 /* ClaudeSession.swift */,
+				41E788F417A6B7B41C576EB3 /* ClaudeSessionPrompts.swift */,
+				34A7F4AE23A83B2E4DDDE849 /* SessionDebugLogger.swift */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		DAFDFEB89271016D2132BA80 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				01C577CFAA6478276A44BFEE /* CalendarManager.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		E12CEAB5AAAC2020BB9A3D56 /* Granola */ = {
+			isa = PBXGroup;
+			children = (
+				4909C0CD7FD1CE5D0FE1766B /* GranolaClient.swift */,
+				AC35911D456E6F602D953ECE /* GranolaModels.swift */,
+				F03C7CC9C51469D349AB07EF /* GranolaSyncEngine.swift */,
+			);
+			path = Granola;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1ECAAD73DD625D2ACF866885 /* RevyD */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F81A940FF2E5F73144331FA0 /* Build configuration list for PBXNativeTarget "RevyD" */;
+			buildPhases = (
+				C3BE7EE1F256FAA217BA7F65 /* Sources */,
+				7E161A3DF6A84278E053ADD0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RevyD;
+			packageProductDependencies = (
+			);
+			productName = RevyD;
+			productReference = 1266D3DDA7AD6B1A004AE111 /* RevyD.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0C6270B45748B03A0042EAFF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = 971966D86BAEE1F414C67058 /* Build configuration list for PBXProject "RevyD" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 8A4D0F5C63913DF46D180747;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 737E5516EF6069A8DC9829E7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1ECAAD73DD625D2ACF866885 /* RevyD */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7E161A3DF6A84278E053ADD0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AD29C8CEBA4DCD70873BC14 /* Assets.xcassets in Resources */,
+				D6D13160F218E7408F8262DA /* CharacterSprites in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C3BE7EE1F256FAA217BA7F65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F175C5386C3D0B9007476E37 /* AppSettings.swift in Sources */,
+				589F197CEDC1260A38FCC642 /* CalendarManager.swift in Sources */,
+				9E7CC1C7EC6535D9A1CFD1A5 /* CharacterContentView.swift in Sources */,
+				42BD9C33F7F7B49A5D9D708F /* ClaudeSession.swift in Sources */,
+				8B732F56A800344F1D71A21C /* ClaudeSessionPrompts.swift in Sources */,
+				B181612401E631F59428B95E /* CommitmentStore.swift in Sources */,
+				8A3905CC2B6345E058E7CD9E /* CommitmentTracker.swift in Sources */,
+				92E0A175084BAC174E1E3F85 /* DebriefEngine.swift in Sources */,
+				DD5EAA4BD4FBC26C38400F35 /* DocumentIndexer.swift in Sources */,
+				C65DC4182DDF734D98988B85 /* DocumentStore.swift in Sources */,
+				39081EBA153276FD1D5D819D /* GranolaClient.swift in Sources */,
+				FB82B363C34AB7F83B652B10 /* GranolaModels.swift in Sources */,
+				E5B9CBEF76131F75B1E9AB1F /* GranolaSyncEngine.swift in Sources */,
+				2DCC7F1923DC817840A72B83 /* KeyableWindow.swift in Sources */,
+				3417129ED3092A3DE6191956 /* KnowledgeFusionEngine.swift in Sources */,
+				EFA905DD4CB17C23F2CDC0C1 /* KnowledgeIndex.swift in Sources */,
+				521DCF849BC937942F70059B /* MarkdownExtractor.swift in Sources */,
+				9AE976D945318F031C91614E /* MarkdownRenderer.swift in Sources */,
+				F9D6DD7CE57F8FFDE5E587AE /* MeetingStore.swift in Sources */,
+				F80305512B209D44B182362E /* PDFExtractor.swift in Sources */,
+				ADAA2082E9AA6D5ADE432FF3 /* PeopleProfileEngine.swift in Sources */,
+				5055A32BEE73703E508A5EEC /* PersonStore.swift in Sources */,
+				FB8BEBB0F01BBAD6F98285F0 /* PopoverTheme.swift in Sources */,
+				AC21B728689286F144909B7A /* PrepEngine.swift in Sources */,
+				DA2BC4B92B001F494933C24B /* ProactiveScheduler.swift in Sources */,
+				FCD2DBF837D486F0AB36AE0E /* RevyCharacter.swift in Sources */,
+				9B182EE2130AC9C0CEFFBBD4 /* RevyCharacterBubble.swift in Sources */,
+				D5AFA48A6E6DC267DBB23BAF /* RevyCharacterCore.swift in Sources */,
+				E0988FED238CEC26FF1C509A /* RevyCharacterMovement.swift in Sources */,
+				3C412793B8CBF963C6B54219 /* RevyCharacterPopover.swift in Sources */,
+				FB0BB8130C7D3D24C7C0001E /* RevyCharacterSessionWiring.swift in Sources */,
+				5252CCB07DCB8D107F936D8B /* RevyCharacterTypes.swift in Sources */,
+				873560FEB757FC6AC0DB4B54 /* RevyDApp.swift in Sources */,
+				0CB77C658D6CAA7C6DD558F8 /* RevyDController.swift in Sources */,
+				772F04A88F95B92D5CC22AF5 /* RevyDatabase.swift in Sources */,
+				07565F372A74B1EC5E416B5E /* Schema.swift in Sources */,
+				6B19217832530D9C587F1B06 /* SessionDebugLogger.swift in Sources */,
+				5F109D9953F872DC291AD428 /* TerminalView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2C0C0A5BEEE0349C4FEAF633 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		F273D459B2608EF5D2779797 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		F31EC4ED460D3B0098869361 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RevyD/RevyD.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = NO;
+				INFOPLIST_FILE = RevyD/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 0.1.0;
+				OTHER_LDFLAGS = (
+					"-lsqlite3",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.revnth.revyd;
+				PRODUCT_NAME = RevyD;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+		F554AC13E5D357BC760F26E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RevyD/RevyD.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = NO;
+				INFOPLIST_FILE = RevyD/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 0.1.0;
+				OTHER_LDFLAGS = (
+					"-lsqlite3",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.revnth.revyd;
+				PRODUCT_NAME = RevyD;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		971966D86BAEE1F414C67058 /* Build configuration list for PBXProject "RevyD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C0C0A5BEEE0349C4FEAF633 /* Debug */,
+				F273D459B2608EF5D2779797 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F81A940FF2E5F73144331FA0 /* Build configuration list for PBXNativeTarget "RevyD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F31EC4ED460D3B0098869361 /* Debug */,
+				F554AC13E5D357BC760F26E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0C6270B45748B03A0042EAFF /* Project object */;
+}

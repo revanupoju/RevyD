@@ -1,0 +1,59 @@
+name: RevyD
+options:
+  bundleIdPrefix: com.revnth
+  deploymentTarget:
+    macOS: "14.0"
+  xcodeVersion: "16.0"
+  generateEmptyDirectories: true
+
+targets:
+  RevyD:
+    type: application
+    platform: macOS
+    sources:
+      - path: RevyD
+        excludes:
+          - "CharacterSprites/**"
+      - path: RevyD/CharacterSprites
+        type: folder
+        buildPhase: resources
+    settings:
+      base:
+        PRODUCT_NAME: RevyD
+        PRODUCT_BUNDLE_IDENTIFIER: com.revnth.revyd
+        MARKETING_VERSION: "0.1.0"
+        CURRENT_PROJECT_VERSION: "1"
+        INFOPLIST_FILE: RevyD/Info.plist
+        CODE_SIGN_ENTITLEMENTS: RevyD/RevyD.entitlements
+        MACOSX_DEPLOYMENT_TARGET: "14.0"
+        SWIFT_VERSION: "5.9"
+        LD_RUNPATH_SEARCH_PATHS: "$(inherited) @executable_path/../Frameworks"
+        ENABLE_HARDENED_RUNTIME: false
+        CODE_SIGN_IDENTITY: "-"
+        OTHER_LDFLAGS:
+          - "-lsqlite3"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+      configs:
+        Debug:
+          SWIFT_OPTIMIZATION_LEVEL: "-Onone"
+          SWIFT_ACTIVE_COMPILATION_CONDITIONS: "DEBUG"
+        Release:
+          SWIFT_OPTIMIZATION_LEVEL: "-O"
+    info:
+      path: RevyD/Info.plist
+      properties:
+        LSUIElement: true
+        CFBundleName: RevyD
+        CFBundleDisplayName: RevyD
+        CFBundleIdentifier: com.revnth.revyd
+        CFBundleVersion: "1"
+        CFBundleShortVersionString: "0.1.0"
+        CFBundlePackagetype: APPL
+        CFBundleExecutable: RevyD
+        LSMinimumSystemVersion: "14.0"
+        NSCalendarsUsageDescription: "RevyD needs calendar access to prepare you for upcoming meetings."
+        NSAppleEventsUsageDescription: "RevyD needs to communicate with other apps."
+    entitlements:
+      path: RevyD/RevyD.entitlements
+      properties:
+        com.apple.security.app-sandbox: false
